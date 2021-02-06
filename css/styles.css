@@ -1,2 +1,72 @@
-/* styles go here */    }
+/* start with the smallest screen first - serve a scaled-down version of the background image for page loading speeds, and bandwidth. */
+
+/* the original image is 4460px x 2974px and 950lb. We need to resize to 600px wide and compress to reduce the file size. */
+
+header {
+    padding: 24px;
+    height: 400px;
+    margin-bottom: 24px;
+    background-color: #eff2f7;
+    background: url(../img/bg-sm.jpg) center center / cover no-repeat;
+    /* this is shorthand for background=image, background position ( x.y), background-size (cover for full screens) and background repeat */
 }
+
+h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+aside,
+section {
+    padding: 60px 0;
+    color: #fff;
+    text-align: center;
+}
+
+aside:first-of-type {
+    background-color: #73a302;
+}
+
+section {
+    background-color: #334839;
+}
+
+aside {
+    background-color: #315002;
+}
+
+/* as the screen gets wider, the background images stretches to fit and lower sized does look good on the screen. We can use the media queries to swap out the background image for a larger, higher quality image */
+
+@media only screen and (min-width: 950px) {
+    header {
+        background: url(../img/bg-med.jpg) center center / cover no-repeat;
+        height: 500px;
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    aside {
+        width: 24%;
+    }
+
+    section {
+        width: 48%;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    header {
+        background: url(../img/bg-lrg.jpg) center bottom / cover no-repeat;
+        height: 700px;
+    }
+
+    .inner-container {
+        margin: 0 auto;
+        width: 1400px;
+    }
+}
+
+
